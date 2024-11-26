@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هل تحب هاجر؟</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            color: #333;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #ff3366;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #ff3366;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, font-size 0.3s ease;
+        }
+        button:hover {
+            background-color: #e62e5a;
+        }
+        #no:hover {
+            transform: scale(1.1);
+        }
+        #no {
+            margin-right: 20px;
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Do u love Hajer</h1>
+    <div class="buttons">
+        <button id="no" onclick="enlargeYes()">NO</button>
+        <button id="yes" onclick="goToHeartPage()">YES!</button>
+    </div>
+
+    <script>
+        let yesScale = 1; // الحجم الافتراضي لزر "إيه"
+
+        // تكبير زر "إيه" تدريجيًا عند الضغط على زر "لا"
+        function enlargeYes() {
+            yesScale += 0.2; // زيادة تدريجية للحجم
+            const yesButton = document.getElementById("yes");
+            yesButton.style.transform = `scale(${yesScale})`; // تطبيق التكبير
+        }
+
+        // الانتقال إلى صفحة القلب
+        function goToHeartPage() {
+            window.location.href = "heart.html"; // اسم الصفحة الثانية
+        }
+    </script>
+</body>
+</html>
+
+
+
+

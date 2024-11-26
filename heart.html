@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>القلب</title>
+    <style>
+        body {
+            font-family: monospace;
+            text-align: center;
+            background-color: #ffe6f2;
+            color: #ff3366;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #output {
+            white-space: pre;
+            line-height: 1.2;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        function generateHeart() {
+            const size = 10; // حجم القلب
+            let result = "";
+
+            // الجزء العلوي من القلب
+            for (let x = 0; x < size; x++) {
+                for (let y = 0; y <= 4 * size; y++) {
+                    const dist1 = Math.sqrt(Math.pow(x - size, 2) + Math.pow(y - size, 2));
+                    const dist2 = Math.sqrt(Math.pow(x - size, 2) + Math.pow(y - 3 * size, 2));
+                    if (dist1 < size + 0.5 || dist2 < size + 0.5) {
+                        result += "H";
+                    } else {
+                        result += " ";
+                    }
+                }
+                result += "\n";
+            }
+
+            // الجزء السفلي من القلب
+            for (let x = 1; x < 2 * size; x++) {
+                for (let y = 0; y < x; y++) {
+                    result += "";
+                }
+                for (let y = 0; y < 4 * size + 1 - 2 * x; y++) {
+                    result += "H";
+                }
+                result += "\n";
+            }
+
+            return result;
+        }
+
+        document.getElementById("output").textContent = generateHeart();
+    </script>
+</body>
+</html>
